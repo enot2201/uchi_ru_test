@@ -1,4 +1,6 @@
+#возможные цвета светофора для вывода
 @colors = ["red", "yellow", "green"]
+#все возможные операции
 @correct_action = @colors.append("off")
 
 class ValidateAction < StandardError; end

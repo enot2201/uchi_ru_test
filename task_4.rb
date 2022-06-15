@@ -6,24 +6,24 @@ def convert_C_to_F(c_degree)
   c_degree * 1.8 + 32.0
 end
 
-def min_temp_validation?(degree)
+def min_temp_validation?(с_degree)
   #Температура по законам физики не может опускаться ниже данной велечины
-  degree >= -273.15
+  с_degree >= -273.15
 end
-def type_validation?(degree)
+def type_validation?(с_degree)
   #Проверка на то что введено численное значение
-  Float(degree) == nil rescue false
+  Float(с_degree) == nil rescue false
 end
 
 begin
   puts "Введите температуру по Цельсию"
-  degree = gets.chomp
-  if type_validation?(degree)
+  с_degree = gets.chomp
+  if type_validation?(с_degree)
     raise TypeExeption
   end
-  degree = degree.to_f
+  с_degree = с_degree.to_f
   if min_temp_validation?(degree)
-    puts "Температура по Фаренгейту: #{convert_C_to_F(degree)}"
+    puts "Температура по Фаренгейту: #{convert_C_to_F(с_degree)}"
   else
     raise MinTempExeption
   end
