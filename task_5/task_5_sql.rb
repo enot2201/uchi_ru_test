@@ -1,14 +1,14 @@
 #количество всех студентов
-ALL_STUDENTS_COUNT_SQL = 'SELECT COUNT(*) FROM "user".student;'
-#Количество студентов с именем Иван (сложение строк применено чтобы ненарушить синтаксис SQL)
+ALL_STUDENTS_COUNT_SQL = 'SELECT COUNT(*) FROM custom_auth.student;'
+#Количество студентов с именем Иван
 IVAN_STUDENTS_COUNT_SQL = 'SELECT count(*)
-FROM "user".students' + "WHERE name='Иван'"
-#Количество студентов созданых после 1 сентября 2020го (сложение строк применено чтобы ненарушить синтаксис SQL)
-DATE_STUDENTS_COUNT_SQL = 'SELECT COUNT(*) FROM "user".students' + "WHERE created_at > '2020-09-01'"
-#Количество студентов с родителями (сложение строк применено чтобы ненарушить синтаксис SQL)
-STUDENTS_WITH_PARENTS_COUNT_SQL = 'SELECT COUNT(*) FROM "user".students WHERE parent_id IS NOT NULL'
-#Количество студентов без родителей (сложение строк применено чтобы ненарушить синтаксис SQL)
-STUDENTS_WITHOUT_PARENTS_COUNT_SQL = 'SELECT COUNT(*) FROM "user".students WHERE parent_id IS NULL'
-#Количество студентов с родителем Мариной(сложение строк применено чтобы ненарушить синтаксис SQL)
-STUDENTS_PARENT_MARINA_COUNT_SQL = 'SELECT COUNT(*)
-FROM "user".students INNER JOIN "user".parents ON ("user".students.parent_id = "user".parents.id) + WHERE ("user".parents.name =' + "'Марина')"
+FROM custom_auth.student WHERE name="Иван"'
+#Количество студентов созданых после 1 сентября 2020го
+DATE_STUDENTS_COUNT_SQL = 'SELECT COUNT(*) FROM custom_auth.student WHERE created_at > "2020-09-01"'
+#Количество студентов с родителями
+STUDENTS_WITH_PARENTS_COUNT_SQL = 'SELECT COUNT(*) FROM custom_auth.student WHERE parent_id IS NOT NULL'
+#Количество студентов без родителей
+STUDENTS_WITHOUT_PARENTS_COUNT_SQL = 'SELECT COUNT(*) FROM custom_auth.student WHERE parent_id IS NULL'
+#Количество студентов с родителем Мариной
+STUDENTS_PARENT_MARINA_COUNT_SQL = "SELECT COUNT(*)
+FROM custom_auth.student INNER JOIN custom_auth.parent ON (custom_auth.student.parent_id = custom_auth.parent.id) WHERE (custom_auth.parent.name = 'Марина')"
