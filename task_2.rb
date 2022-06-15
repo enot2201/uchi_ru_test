@@ -18,7 +18,7 @@ def find_sum_of_values()
   result
 end
 
-puts "Массив ключей (уникальных): #{find_unique_keys(@arr)}"
+puts "Массив уникальных ключей: #{find_unique_keys(@arr)}"
 @values = find_unique_values(@arr)
-puts "Массив значений (уникальных): #{@values}"
-puts "Сумма значений (всех): #{find_sum_of_values()}"
+puts "Массив уникальных значений: #{@values}"
+puts "Сумма всех значений: #{find_sum_of_values()}"
