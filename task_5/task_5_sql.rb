@@ -1,10 +1,10 @@
 #количество всех студентов
 ALL_STUDENTS_COUNT_SQL = 'SELECT COUNT(*) FROM custom_auth.student;'
 #Количество студентов с именем Иван
-IVAN_STUDENTS_COUNT_SQL = 'SELECT count(*)
-FROM custom_auth.student WHERE name="Иван"'
+IVAN_STUDENTS_COUNT_SQL = "SELECT count(*)
+FROM custom_auth.student WHERE name='Иван'"
 #Количество студентов созданых после 1 сентября 2020го
-DATE_STUDENTS_COUNT_SQL = 'SELECT COUNT(*) FROM custom_auth.student WHERE created_at > "2020-09-01"'
+DATE_STUDENTS_COUNT_SQL = "SELECT COUNT(*) FROM custom_auth.student WHERE created_at > '2020-09-01'"
 #Количество студентов с родителями
 STUDENTS_WITH_PARENTS_COUNT_SQL = 'SELECT COUNT(*) FROM custom_auth.student WHERE parent_id IS NOT NULL'
 #Количество студентов без родителей
