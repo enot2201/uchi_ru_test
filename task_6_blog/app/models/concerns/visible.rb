@@ -1,4 +1,5 @@
 module Visible
+  #Консёрн для обработки поля статус
   extend ActiveSupport::Concern
 
   VALID_STATUSES = ['public', 'private', 'archived']
