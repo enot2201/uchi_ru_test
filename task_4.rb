@@ -1,29 +1,29 @@
 class TypeExeption < StandardError; end
 class MinTempExeption < StandardError; end
 
-def convert_C_to_F(c_degree)
+def convert_c_to_f(c_degree)
   #Конвертирование градусов цельсия в фаренгейты
   c_degree * 1.8 + 32.0
 end
 
-def min_temp_validation?(с_degree)
+def min_temp_validation?(c_degree)
   #Температура по законам физики не может опускаться ниже данной велечины
-  с_degree >= -273.15
+  c_degree >= -273.15
 end
-def type_validation?(с_degree)
+def type_validation?(c_degree)
   #Проверка на то что введено численное значение
-  Float(с_degree) == nil rescue false
+  false if Float(c_degree) rescue true
 end
 
 begin
   puts "Введите температуру по Цельсию"
-  с_degree = gets.chomp
-  if type_validation?(с_degree)
+  c_degree = gets.chomp
+  if type_validation?(c_degree)
     raise TypeExeption
   end
-  с_degree = с_degree.to_f
-  if min_temp_validation?(degree)
-    puts "Температура по Фаренгейту: #{convert_C_to_F(с_degree)}"
+  c_degree = c_degree.to_f
+  if min_temp_validation?(c_degree)
+    puts "Температура по Фаренгейту: #{convert_c_to_f(c_degree)}"
   else
     raise MinTempExeption
   end

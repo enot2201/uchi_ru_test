@@ -13,7 +13,7 @@ begin
   while true
     puts "Введите текущий цвет светофора\nЧтобы завершить программу введите off"
     color_at_now = gets.chomp
-    if !is_input_valid?(color_at_now)
+    unless is_input_valid?(color_at_now)
       raise ValidateAction
     end
     case color_at_now
